@@ -9,21 +9,20 @@ import UIKit
 
 class VerExamenViewController: UIViewController {
 
+    @IBOutlet weak var lblNombre: UILabel!
+    @IBOutlet weak var lblPreguntas: UILabel!
+    @IBOutlet weak var lblAcertadas: UILabel!
+    @IBOutlet weak var lblNota: UILabel!
+    
+    var examenMostrar: ExamenModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        lblNombre.text = examenMostrar.nombre
+        lblPreguntas.text = String(examenMostrar.totalPreguntas)
+        lblAcertadas.text = String(examenMostrar.totalAcertadas)
+        lblNota.text = String(examenMostrar.notaFinal)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
